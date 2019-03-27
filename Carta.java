@@ -20,16 +20,22 @@ public class Carta {
 
 	}
 
-	public Tiempo tiempoMedioCarta(DiaSemana dia) {
+	public Tiempo tiempoMedioCarta() {
 
 		Tiempo total= new Tiempo(0,0);
 		Menu m;
 		
+		Iterator it = this.carta.values().iterator();
+		
+		while(it.hasNext()) {
+			
+			m=(Menu) it.next();
+			total.suma(m.tiempoTotalMenu());
+		}
 		
 
-		 // metodo que hay que crear en menu
-
-		return t;
+		
+		return total;
 
 	}
 

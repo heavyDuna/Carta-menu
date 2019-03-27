@@ -15,6 +15,11 @@ public class Menu {
 		this.menu = t;			//otra opción
 	}*/
 	
+	public Tiempo tiempoMedio() {
+		
+	
+		return null;
+	}
 	
 	public Tiempo tiempoTotalMenu() {
 
@@ -36,5 +41,9 @@ public class Menu {
 		}
 		return s;
 	}
+
+	
+
+	
 
 }

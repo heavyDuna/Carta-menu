@@ -31,15 +31,16 @@ public class Pizza extends Receta implements FastFoodeable {
 		return null;
 	}
 
+	public String getNombre() {
+		
+		return this.getNombre();
+
+	}
+
 	@Override
 	public String toString() {
 		return "Pizza [tiempoDePreparacion()=" + tiempoDePreparacion() + ", isVegetariano()=" + isVegetariano()
 				+ ", tipoPreparacion()=" + tipoPreparacion() + "]";
 	}
-	
-	
-	
-	
 
-	
 }

@@ -25,8 +25,6 @@ public class Main {
 		
 		System.out.println("------------------------------------------------");
 
-		// Carta c1 = new Carta();
-		
 		
 		//OTRA RECETA
 
@@ -48,20 +46,35 @@ public class Main {
 		r2.tiempoTotal();
 
 		System.out.println(r2);
+		
+		// Carta c1 = new Carta();
+		
 
 		// map.Entry
 		/*
-		 * Set <Map.Entry<Alumno, Fecha>> pares; Iterator <Map.Entry<Alumno, Fecha>> it;
-		 * Map.Entry<Alumno,Fecha> x; Alumno k; Fecha v; Alumno a =new
-		 * Alumno("Pepe",44); Alumno a =new Alumno("Pepe",44);
+		 * Set <Map.Entry<Alumno, Fecha>> pares; 
+		 * Iterator <Map.Entry<Alumno, Fecha>> it;
+		 * Map.Entry<Alumno,Fecha> x; 
+		 * Alumno k; 
+		 * Fecha v; 
+		 * Alumno a =new  lumno("Pepe",44); 
+		 * Alumno a =new Alumno("Pepe",44);
 		 * 
 		 * Map <Alumno, Fecha>=new HashMap <Alumno, Fecha>();
 		 * 
 		 * 
-		 * pares=m.entrySet(); it=pares.iterator();
+		 * pares=m.entrySet(); 
+		 * it=pares.iterator();
 		 * 
-		 * while(it.hasNext()) { x=it.next(); k=z.getKey(); v=x.getValue();
-		 * System.out.println(x); System.out.println(k); System.out.println(v); }
+		 * while(it.hasNext()) { 
+		 * 	x=it.next(); 
+		 * 	
+		 * 	k=z.getKey(); 
+		 * 	v=x.getValue();
+		 * 
+		 * System.out.println(x); 
+		 * System.out.println(k); 
+		 * System.out.println(v); }
 		 */
 
 	}

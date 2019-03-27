@@ -5,14 +5,18 @@ import java.util.TreeSet;
 public class Menu {
 	
 	private TreeSet menu;
+	private String titulo;
 	
-	public Menu(Comparator c) {
+	public Menu(String titulo,Comparator c) {
 		
+		this.titulo=titulo;		
 		this.menu=new TreeSet(c);												//añadir comparador
 	}
 	
-	/*public Menu (TreeSet t) {
-		this.menu = t;			//otra opción
+	/*public Menu (String titulo,TreeSet m) {
+	 	super();
+		this.menu = m;	
+		this.titulo=titulo;														//otra opción
 	}*/
 	
 	public Tiempo tiempoMedio() {

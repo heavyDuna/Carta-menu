@@ -1,3 +1,4 @@
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -7,11 +8,36 @@ import java.util.TreeSet;
 public class Carta {
 
 	private Map carta;
+	String titulo;
 
-	public Carta() {
+	public Carta(String titulo) {
 
 		this.carta = new HashMap();
+		this.titulo = titulo;
 
+	}
+
+	/*public Carta(String titulo, Map carta) {
+
+		this.carta = carta;
+		this.titulo = titulo;
+
+	}*/
+
+	public Map getCarta() {
+		return carta;
+	}
+
+	public void setCarta(Map carta) {
+		this.carta = carta;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public void add(DiaSemana dia, Menu m) {
@@ -22,21 +48,33 @@ public class Carta {
 
 	public Tiempo tiempoMedioCarta() {
 
-		Tiempo total= new Tiempo(0,0);
+		Tiempo total = new Tiempo(0, 0);
 		Menu m;
-		
-		Iterator it = this.carta.values().iterator();
-		
-		while(it.hasNext()) {
-			
-			m=(Menu) it.next();
-			total.suma(m.tiempoTotalMenu());
-		}
-		
+		int cont = 0;
 
-		
+		Collection c = this.carta.values();
+
+		Iterator it = c.iterator();
+
+		while (it.hasNext()) {
+
+			cont++;
+			m = (Menu) it.next();
+			total.suma(m.tiempoTotalMenu()); // metodo a añadir en menu
+												// a suma le estoy pasando otro tiempo
+
+		}
+
+		total.division(cont);
 		return total;
 
+	}
+
+	public Tiempo tiempoMedioMenu(DiaSemana dia) {
+
+		Menu m=(Menu) this.carta.get(dia);	
+		
+		return m.tiempoMedio();												// de un dia en concreto
 	}
 
 	public boolean existeClave(DiaSemana dia) { // si existe o no la clave
@@ -87,7 +125,7 @@ public class Carta {
 			s = s + "Clave: " + claveValor[0] + "Menu: " + claveValor[1];
 
 		}
-		
+
 		return s;
 	}
 

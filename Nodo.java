@@ -5,13 +5,15 @@ public class Nodo {
 	private Nodo sig;
 
 	public Nodo() {
+		
+		this.sig=null;
 
 	}
 
 	public Nodo(Paso info, Nodo sig) {
 
 		this.info = info;
-		this.sig = sig;
+		this.sig = null;
 	}
 
 	public Paso getInfo() {
@@ -34,7 +36,7 @@ public class Nodo {
 
 		String S = "Nodo";
 
-		S = this.info + " " + "--> ";
+		S = this.info + " " + "--> " + "\n";
 
 		return S;
 

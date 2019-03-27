@@ -25,7 +25,7 @@ public class Tiempo {
 		this.minuto = minuto;
 	}
 
-	public void suma(Tiempo t) {
+	public Tiempo suma(Tiempo t) {
 
 		this.hora = this.hora + t.hora;
 		this.minuto = this.minuto + t.minuto;
@@ -35,6 +35,7 @@ public class Tiempo {
 			this.hora++;
 			this.minuto = this.minuto - 60;
 		}
+		return t;
 	}
 
 	public int compareTo(Object o) {

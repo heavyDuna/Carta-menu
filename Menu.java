@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.TreeSet;
 
@@ -5,12 +6,16 @@ public class Menu {
 	
 	private TreeSet menu;
 	
-	public Menu() {
+	public Menu(Comparator c) {
 		
-		this.menu=new TreeSet();
+		this.menu=new TreeSet(c);												//añadir comparador
 	}
 	
-
+	/*public Menu (TreeSet t) {
+		this.menu = t;			//otra opción
+	}*/
+	
+	
 	public Tiempo tiempoTotalMenu() {
 
 		return null;
@@ -25,7 +30,7 @@ public class Menu {
 		Iterator it=this.menu.iterator();
 		while(it.hasNext()) {
 			
-			x=it.hasNext();
+			x=(String) it.next();
 			s=s+x.toString();
 			
 		}

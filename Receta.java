@@ -16,23 +16,9 @@ public class Receta {
 	public Receta() {
 
 		this.ingredientes = new String[0];
+		// this.ingredientes = new String[10];
+		// this.n=n;
 		this.pasosPreparacion = new Lista();
-
-	}
-
-	public void ampliar() {
-		String[] temporal = new String[this.ingredientes.length + 1];
-		int i = 0;
-		while (i < this.ingredientes.length) {
-			temporal[i] = this.ingredientes[i];
-			i++;
-		}
-		this.ingredientes = temporal;
-	}
-
-	public void addPaso(Paso p) {
-
-		this.pasosPreparacion.add(p);
 
 	}
 
@@ -60,26 +46,54 @@ public class Receta {
 		this.pasosPreparacion = pasosPreparacion;
 	}
 
+	public void ampliar() {
+		String[] aux = new String[this.ingredientes.length + 1];
+		int i = 0;
+		while (i < this.ingredientes.length) {
+			aux[i] = this.ingredientes[i];
+			i++;
+		}
+		this.ingredientes = aux;
+	}
+
 	public void addIngrediente(String ingrediente) {
 
 		ampliar();
 		// System.out.println(Arrays.toString(this.ingredientes));
 
 		this.ingredientes[this.ingredientes.length - 1] = ingrediente;
+		// this.ingredientes[this.n]=ingrediente;
+		// this.n++;
 
 	}
 
-	public Tiempo tiempoTotal() {
-		return null;
+	public void addPaso(Paso p) {
+
+		this.pasosPreparacion.add(p);
 
 	}
 
+	public void tiempoTotal() {
+
+		this.pasosPreparacion.tiempoTotal();
+
+	}
+
+	@Override
 	public String toString() {
-
-		String s = "Ingredientes:" + Arrays.toString(ingredientes) + "\n" + "Pasos: " + "\n" + pasosPreparacion;
-
-		return s;
-
+		return "Nombre receta: " + nombre + "\n" + "Ingredientes: " + Arrays.toString(ingredientes) + "\n" + "Pasos: "
+				+ pasosPreparacion;
 	}
+
+	/*
+	 * public String toString() {
+	 * 
+	 * String s = "Ingredientes:" + Arrays.toString(ingredientes) + "\n" + "Pasos: "
+	 * + "\n" + pasosPreparacion;
+	 * 
+	 * return s;
+	 * 
+	 * }
+	 */
 
 }

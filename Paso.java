@@ -1,17 +1,13 @@
 public class Paso {
-	
+
 	private String descripcion;
 	private Tiempo tiempoPreparacion;
-	
-	public Paso() {
-		
-	}
-	
+
 	public Paso(String descripcion, Tiempo tiempoPreparacion) {
-		
-		this.descripcion=descripcion;
-		this.tiempoPreparacion=tiempoPreparacion;
-		
+
+		this.descripcion = descripcion;
+		this.tiempoPreparacion = tiempoPreparacion;
+
 	}
 
 	public String getDescripcion() {
@@ -34,7 +30,5 @@ public class Paso {
 	public String toString() {
 		return "Paso [nombre=" + descripcion + ", tiempoPreparacion=" + tiempoPreparacion + "]";
 	}
-	
-	
 
 }

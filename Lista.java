@@ -20,12 +20,14 @@ public class Lista {
 
 		Nodo nuevo = new Nodo();
 		nuevo.setInfo(p);
+		nuevo.setSig(this.com);
 		this.com = nuevo;
 	}
 
 	public void add(Paso p) {
 
 		Nodo nuevo = new Nodo();
+		nuevo.setInfo(p);
 		Nodo n = this.com;
 
 		if (n == null) {
@@ -39,10 +41,27 @@ public class Lista {
 				n = n.getSig();
 			}
 
-			nuevo.setInfo(p);
 			n.setSig(nuevo);
 
 		}
+	}
+
+	public Tiempo tiempoTotal() {
+
+	
+		Tiempo tiempoTotal=new Tiempo(0,0);
+		Nodo p = this.com;
+		
+		while (p != null) {
+
+			tiempoTotal.suma(p.getInfo().getTiempoPreparacion());
+			p = p.getSig();
+			
+			
+		}
+		System.out.println("Tiempo total preparacion: "+ tiempoTotal);
+		return tiempoTotal;
+		
 	}
 
 	public String toString() {
@@ -52,7 +71,7 @@ public class Lista {
 
 		while (p != null) {
 
-			l = p.toString();
+			l = l+p.toString();
 			p = p.getSig();
 		}
 

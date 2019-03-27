@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -7,9 +8,9 @@ public class Carta {
 
 	private Map carta;
 
-	public Carta(Map carta) {
+	public Carta() {
 
-		this.carta = carta;
+		this.carta = new HashMap();
 
 	}
 
@@ -19,19 +20,20 @@ public class Carta {
 
 	}
 
-	public Tiempo tiempoMedioMenu(DiaSemana dia) {
+	public Tiempo tiempoMedioCarta(DiaSemana dia) {
 
-		Tiempo t;
+		Tiempo total= new Tiempo(0,0);
 		Menu m;
+		
+		
 
-		m = (Menu) this.carta.get(dia);
-		t = m.tiempoTotalMenu(); 								// metodo que hay que crear en menu
+		 // metodo que hay que crear en menu
 
 		return t;
 
 	}
 
-	public boolean existeClave(DiaSemana dia) {					//si existe o no la clave
+	public boolean existeClave(DiaSemana dia) { // si existe o no la clave
 
 		boolean existe = false;
 		Set s = this.carta.keySet();
@@ -47,18 +49,40 @@ public class Carta {
 		return existe;
 
 	}
-	
+
 	public boolean existeConjuntoParejas() {
-		
+
 		boolean existe = false;
 		Set s = this.carta.entrySet();
 		Iterator it = s.iterator();
-		
-		while(it.hasNext()) {
+
+		while (it.hasNext()) {
 			System.out.println(it.next());
 		}
+		return existe;
+
+	}
+
+	public String mostrarPraresValores() {
+
+		String s = "";
+
+		String[] claveValor = new String[2];
+		String par;
+
+		Set pares = this.carta.entrySet();
+		Iterator it = pares.iterator();
+
+		while (it.hasNext()) {
+
+			par = (String) it.next().toString();
+			claveValor = par.split("=");
+
+			s = s + "Clave: " + claveValor[0] + "Menu: " + claveValor[1];
+
+		}
 		
-		
+		return s;
 	}
 
 }

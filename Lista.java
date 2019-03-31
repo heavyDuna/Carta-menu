@@ -59,7 +59,7 @@ public class Lista {
 			
 			
 		}
-		System.out.println("Tiempo total preparacion: "+ tiempoTotal);
+		//System.out.println("Tiempo total preparacion: "+ tiempoTotal);
 		return tiempoTotal;
 		
 	}
@@ -71,7 +71,7 @@ public class Lista {
 
 		while (p != null) {
 
-			l = l+p.toString();
+			l = l+p;
 			p = p.getSig();
 		}
 

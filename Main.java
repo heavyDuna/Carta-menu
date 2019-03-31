@@ -33,8 +33,9 @@ public class Main {
 		r2.setNombre("Tortilla");
 		r2.addIngrediente("huevos");
 		r2.addIngrediente("patatas");
+		r2.addIngrediente("cebolla");
 
-		Tiempo t3 = new Tiempo(0, 40);
+		Tiempo t3 = new Tiempo(0, 10);
 		Paso p3 = new Paso("cortar", t3);
 
 		Tiempo t4 = new Tiempo(1, 10);

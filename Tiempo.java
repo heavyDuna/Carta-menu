@@ -1,4 +1,4 @@
-public class Tiempo {
+public class Tiempo implements Comparable{
 
 	private int hora;
 	private int minuto;
@@ -7,6 +7,12 @@ public class Tiempo {
 
 		this.hora = hora;
 		this.minuto = minuto;
+	}
+	
+	public Tiempo() {
+
+		this.hora = 0;
+		this.minuto = 0;
 	}
 
 	public int getHora() {
@@ -30,7 +36,7 @@ public class Tiempo {
 		this.hora = this.hora + t.hora;
 		this.minuto = this.minuto + t.minuto;
 
-		while (this.minuto >= 60) {
+		while (this.minuto > 59) {
 
 			this.hora++;
 			this.minuto = this.minuto - 60;
@@ -39,8 +45,12 @@ public class Tiempo {
 	}
 	
 	public void division (int n) {
-		int minutos=this.hora*3600+this.minuto*60+this.minuto;
 		
+		int minutos=this.hora*3600+this.minuto*60+this.minuto;
+		minutos=minutos/n;		
+		
+		this.minuto=minutos%60;
+		this.hora=minutos/60;
 	}
 
 	public int compareTo(Object o) {

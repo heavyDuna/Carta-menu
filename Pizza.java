@@ -1,14 +1,28 @@
 
 public class Pizza extends Receta implements FastFoodeable {
 
+	private Tamaño tamaño;
+
 	public Pizza() {
 		super();
 	}
 
-	public Pizza(String nombre, String[] ingredientes, Lista pasosPreparacion) {
+	public Pizza(String nombre, String[] ingredientes, Lista pasosPreparacion, Tamaño tamaño) {
 
 		super(nombre, ingredientes, pasosPreparacion);
+		this.tamaño=tamaño;
 
+	}
+	
+	public Pizza(String nombre) {
+		super(nombre);
+		
+	}
+
+
+	public Pizza(Tamaño tamaño) {
+		super();
+		this.tamaño = tamaño;
 	}
 
 	@Override
@@ -21,18 +35,18 @@ public class Pizza extends Receta implements FastFoodeable {
 
 	@Override
 	public boolean isVegetariano() {
-		// TODO Auto-generated method stub
+	
 		return false;
 	}
 
 	@Override
 	public Preparacion tipoPreparacion() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return Preparacion.AlHorno;
 	}
 
 	public String getNombre() {
-		
+
 		return this.getNombre();
 
 	}

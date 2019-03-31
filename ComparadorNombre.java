@@ -8,7 +8,7 @@ public class ComparadorNombre implements Comparator {
 		FastFoodeable f1 = (FastFoodeable) o1;
 		FastFoodeable f2 = (FastFoodeable) o2;
 
-		return f1.getNombre().compareTo(f2.getNombre());		//añadimos este metodo es fastfoodeable
+		return f1.getNombre().compareTo(f2.getNombre()); 				// añadimos este metodo es fastfoodeable1
 
 	}
 

@@ -16,10 +16,16 @@ public class Receta {
 	public Receta() {
 
 		this.ingredientes = new String[0];
-		// this.ingredientes = new String[10];
-		// this.n=n;
+		// this.ingredientes = new String[10];		solucion Virginia
+		// this.n=0;
 		this.pasosPreparacion = new Lista();
 
+	}
+
+	public Receta(String nombre) {
+		this.nombre = nombre;
+		this.ingredientes = new String[0];
+		this.pasosPreparacion = new Lista();
 	}
 
 	public String getNombre() {
@@ -62,7 +68,7 @@ public class Receta {
 		// System.out.println(Arrays.toString(this.ingredientes));
 
 		this.ingredientes[this.ingredientes.length - 1] = ingrediente;
-		// this.ingredientes[this.n]=ingrediente;
+		// this.ingredientes[this.n]=ingrediente;		solucion Virginia
 		// this.n++;
 
 	}
@@ -84,16 +90,5 @@ public class Receta {
 		return "Nombre receta: " + nombre + "\n" + "Ingredientes: " + Arrays.toString(ingredientes) + "\n" + "Pasos: "
 				+ pasosPreparacion;
 	}
-
-	/*
-	 * public String toString() {
-	 * 
-	 * String s = "Ingredientes:" + Arrays.toString(ingredientes) + "\n" + "Pasos: "
-	 * + "\n" + pasosPreparacion;
-	 * 
-	 * return s;
-	 * 
-	 * }
-	 */
 
 }
